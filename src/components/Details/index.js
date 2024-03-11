@@ -15,14 +15,18 @@ const Details = ({
   border,
 }) => {
   const lang =
-    languages.length > 1
+    languages
+    ? languages.length > 1
       ? languages.map((item) => `${item.name}, `)
-      : languages.map((item) => item.name);
+      : languages.map((item) => item.name)
+    : "No Languages in this place.";
 
   const currency =
-    currencies.length > 1
+    currencies
+    ? currencies.length > 1
       ? currencies.map((item) => `${item.name}, `)
-      : currencies.map((item) => item.name);
+      : currencies.map((item) => item.name)
+    : "No currencies in this place.";
 
   const borders = border ? (
     border.map((item, index) => (
